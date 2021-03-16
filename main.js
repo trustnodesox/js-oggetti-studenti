@@ -34,13 +34,13 @@ for (var i = 0; i < classe.length; i++) {
 
 
 $('#invio').click(function () {
-  //var nome = $("#nome").val();
-  //var cognome = $("#cognome").val();
-  //var data = $("#data").val();
+  var nome = $("#nome").val();
+  var cognome = $("#cognome").val();
+  var data = $("#data").val();
   var studente4 = {
-    nome: $("#nome"),
-    cognome: $("#cognome"),
-    età: $("#data"),
+    nome: nome,
+    cognome: cognome,
+    età: data
   }
   classe.push(nome + cognome + data);
   console.log(classe);
