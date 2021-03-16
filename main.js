@@ -18,7 +18,7 @@ var studente3 = {
   età: '22',
 }
 
-//stampo a schermo l'oggetto studente
+//stampo in console.log l'oggetto studente
 for (var key in studente) {
   console.log(key, studente[key]);
 }
@@ -27,21 +27,23 @@ for (var key in studente) {
 var classe = [studente, studente2, studente3];
 console.log(classe);
 
-//stampo nome e cognome di tutti gli studenti
-for (var i = 0; i < classe.length; i++) {
-  console.log(classe[i].nome + ' ' + classe[i].cognome)
-}
 
 
+//raccolgo i dati forniti dall'utente e li compilo in nome-cognome-età
 $('#invio').click(function () {
-  var nome = $("#nome").val();
-  var cognome = $("#cognome").val();
-  var data = $("#data").val();
+  var nome = $('input:text#nome').val();
+  var cognome = $('input:text#cognome').val();
+  var eta = $('#età').val();
   var studente4 = {
     nome: nome,
     cognome: cognome,
-    età: data
+    età: eta
   }
-  classe.push(nome + cognome + data);
-  console.log(classe);
+  classe.push(studente4);
+  //stampo a schermo nome e cognome di tutti gli studenti
+  for (var i = 0; i < classe.length; i++) {
+    document.getElementById('registro').innerHTML += "<li>" + classe[i].nome + " " + classe[i].cognome + "</li>";
+}
+
+//stampo nome e cognome di tutti gli studenti
 })
